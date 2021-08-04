@@ -1,6 +1,6 @@
 # DataBit Example
 
-## Survey example:
+## Survey example
 
 q1 : yes/no  
 q2 : yes/no  
