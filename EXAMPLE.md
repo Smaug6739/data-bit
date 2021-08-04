@@ -47,7 +47,7 @@ const responcesOfUser = UserResponces.comparedData()
 
 ```
 
-## Other example
+## Other examples
 
 - A role system for member
 - A permission system [see dedicate repo](https://github.com/Smaug6739/permissions)
