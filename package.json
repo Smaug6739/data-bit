@@ -1,0 +1,28 @@
+{
+  "name": "data-bit",
+  "version": "1.0.0",
+  "description": "Module for convert data to a number which takes up less space to store",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smaug6739/data-bit.git"
+  },
+  "keywords": [
+    "data",
+    "bit",
+    "store",
+    "bitfield"
+  ],
+  "author": "Smaug6739",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Smaug6739/data-bit/issues"
+  },
+  "homepage": "https://github.com/Smaug6739/data-bit#readme",
+  "devDependencies": {
+    "@types/node": "^16.4.11"
+  }
+}
