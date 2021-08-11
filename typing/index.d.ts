@@ -1,11 +1,11 @@
 import type { IObject } from './typescript/interfaces';
 /**
- * Create a DataBit class.
+ * Create a DataBits class.
  * @class
  * @param {Array<Object>} [flags] - The list of flags.
  * @param {Bits} [bits = 0] - Actual flags of data manager.
  */
-declare class DataBit {
+declare class DataBits {
     /**
  * Return the flags of member as a number.
  * @type {number} Return the bits of the flags of data manager.
@@ -27,6 +27,7 @@ declare class DataBit {
      * @type {number} The bits flags.
      */
     get MAX(): string;
+    get value(): string;
     /**
      * Get the value of the flag required.
      * @param {string|number|Array<string|number>} flags The flag(s).
@@ -64,7 +65,7 @@ declare class DataBit {
      * @param {string|Array<string|number>|number} dataMissingList The flags list.
      * @returns {null|flags} Return null if data manager have all flags or the missings flags.
      */
-    missing(dataMissingList: (string | string[] | number)): string | number | string[];
+    missing(dataMissingList: (string | string[] | number)): null | string | string[] | number;
     /**
      *
      * @param {string|number|Array<string|number>} flagsother The flag(s) to compare.
@@ -94,4 +95,4 @@ declare class DataBit {
      */
     remove(flagToRemove: (string | string[] | number)): (string | TypeError | boolean);
 }
-export { DataBit };
+export { DataBits };

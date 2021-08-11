@@ -1,42 +1,64 @@
-# Data-bit
+# Data-bits
 
 This project is a module for converting a structured dataset into a number that can be stored in a database taking up little space.
 
-## Usage
+## Getting started
 
-Create a new instance of class DataBit with an array of data (string) and the bits of user (number) (optional).
+### Installation
 
-```js
-const DataManager = new DataBit(["FLAG_1", "FLAG_2", "FLAG_3"]);
+With npm :
+
+```sh-session
+npm install data-bits
 ```
 
-## Properties
+With yarn
 
----
+```js
+yarn add data-bits
+```
 
-### default
+## Usage
+
+### Import the module
+
+CommonJS syntax
+
+```js
+const { DataBits } = require("data-bits");
+```
+
+With ES modules syntax :
+
+```js
+import { DataBits } from "data-bits";
+```
+
+Create a new instance of class DataBits with an array of data (string) and the bits of user (number) (optional).
+
+```js
+const DataManager = new DataBits(["FLAG_1", "FLAG_2", "FLAG_3"]);
+```
+
+## DataBits.default
 
 Return the default manager bits as a integer.
 
 Type : Number
 
-### MAX
+## DataBits.MAX
 
 Return the max bit as a string (an addition of the value of each flag).
 
 Type : String
 
-### bit
+## DataBits.bits
 
 Returns the bits of the collection (has a string).
 
 Type : String
 
-## Methods
-
----
-
-## find(name)
+## DataBits#find(name)
 
 Find the FLAG object by name or value
 
@@ -52,7 +74,7 @@ Return :
 console.log(DataManager.find(4));
 ```
 
-## toArray()
+## DataBits#toArray()
 
 Return an array of name of flags of the collection
 
@@ -64,7 +86,7 @@ Array\<string>
 console.log(DataManager.toArray());
 ```
 
-## toString()
+## DataBits#toString()
 
 Return a string of names of flags of the collection (separate by `,` )
 
@@ -76,7 +98,7 @@ String
 console.log(DataManager.toString());
 ```
 
-## hasAnyflag()
+## DataBits#hasAnyflag()
 
 Return true if collection contains at least one value.
 
@@ -88,7 +110,7 @@ Boolean
 console.log(DataManager.hasAnyflag());
 ```
 
-## has(flag)
+## DataBits#has(flag)
 
 Return true if user have permission(s).
 
@@ -104,7 +126,7 @@ Boolean
 console.log(DataManager.has(["FLAG_1"]));
 ```
 
-## missing(flag)
+## DataBits#missing(flag)
 
 Return the missing(s) flag(s) of collection in the parameter.
 
@@ -120,7 +142,7 @@ Flag | null
 console.log(DataManager.missing(["3"]));
 ```
 
-## equals(other)
+## DataBits#equals(other)
 
 Return true if collection flags are equal to parameter.
 
@@ -136,7 +158,7 @@ Boolean
 console.log(DataManager.equals([1, 4]));
 ```
 
-## addAllFlags()
+## DataBits#addAllFlags()
 
 Add all flags from collection.
 
@@ -148,7 +170,7 @@ String (the new bits flags)
 console.log(DataManager.addAllFlags());
 ```
 
-## add(flags)
+## DataBits#add(flags)
 
 Add flag(s) from collection.
 
@@ -164,7 +186,7 @@ String (the new bits flags)
 console.log(DataManager.add("FLAG_1"));
 ```
 
-## removeAllFlags()
+## DataBits#removeAllFlags()
 
 Remove all flags from collection.
 
@@ -176,7 +198,7 @@ String (the new bits flags)
 console.log(DataManager.removeAllFlags());
 ```
 
-## remove(flags)
+## DataBits#remove(flags)
 
 Remove flag(s) from collection.
 

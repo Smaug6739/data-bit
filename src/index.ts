@@ -1,12 +1,12 @@
 import type { IObject } from './typescript/interfaces';
 
 /**
- * Create a DataBit class.
+ * Create a DataBits class.
  * @class 
  * @param {Array<Object>} [flags] - The list of flags.
  * @param {Bits} [bits = 0] - Actual flags of data manager.
  */
-class DataBit {
+class DataBits {
 	/**
  * Return the flags of member as a number.
  * @type {number} Return the bits of the flags of data manager.
@@ -50,6 +50,9 @@ class DataBit {
 		return bit.toString()
 	}
 
+	get value(): string {
+		return this.value
+	}
 
 	/**
 	 * Get the value of the flag required.
@@ -149,7 +152,7 @@ class DataBit {
 	 * @param {string|Array<string|number>|number} dataMissingList The flags list.
 	 * @returns {null|flags} Return null if data manager have all flags or the missings flags.
 	 */
-	public missing(dataMissingList: (string | string[] | number)) {
+	public missing(dataMissingList: (string | string[] | number)): null | string | string[] | number {
 		if (Array.isArray(dataMissingList)) dataMissingList.every(pl => this.missing(pl));
 		if (!this.has(dataMissingList)) return dataMissingList;
 		return null;
@@ -189,9 +192,9 @@ class DataBit {
 	 * Add all flags to the data manager.
 	 * @returns {number} the new flags bits.
 	 */
-	public addAllFlags() {
+	public addAllFlags(): string {
 		this.bits = BigInt(this.MAX);
-		return this.bits.toString()
+		return this.value
 	}
 
 	/**
@@ -207,19 +210,19 @@ class DataBit {
 			const flag = this.data.find(p => p.name === flagToAdd)
 
 			const has: any = this.calculate().filter(p => p.name === flag?.name);
-			if (has && has.length) return this.bits.toString();
+			if (has && has.length) return this.value;
 			if (!flag) throw new TypeError('flag does not exist.');
 			this.bits += flag.value;
 
-			return this.bits.toString();
+			return this.value;
 		}
 		if (type === 'number') {
 			const flag = this.data.find(p => p.value === flagToAdd);
 			const has: any = this.calculate().filter(p => p.value === flag?.value);
-			if (has || !has.length) return this.bits.toString();
+			if (has || !has.length) return this.value;
 			if (!flag) throw new TypeError('The flag does not exist.');
 			this.bits += flag.value;
-			return this.bits.toString();
+			return this.value;
 		}
 		return new TypeError('The flag must be a string, an array or a number.');
 	}
@@ -228,9 +231,9 @@ class DataBit {
 	 * Remove all flags of the data manager.
 	 * @returns {number} the new bits of flags.
 	 */
-	public removeAllFlags() {
+	public removeAllFlags(): string {
 		this.bits = 0n;
-		return this.bits.toString()
+		return this.value
 	}
 
 	/**
@@ -244,21 +247,21 @@ class DataBit {
 		if (type === 'string') {
 			const flag = this.data.find(p => p.name === flagToRemove);
 			const has: any = this.calculate().filter(p => p.name === flag?.name);
-			if (!has || !has.length) return this.bits.toString();
+			if (!has || !has.length) return this.value;
 			if (!flag) return new TypeError('The flag does not exist.');
 			this.bits -= flag.value;
-			return this.bits.toString();
+			return this.value;
 		}
 		if (type === 'number') {
 			const flag = this.data.find(p => p.value === flagToRemove);
 			const has: any = this.calculate().filter(p => p.value === flag?.value);
-			if (!has || !has.length) return this.bits.toString();
+			if (!has || !has.length) return this.value;
 			if (!flag) return new TypeError('The flag does not exist.');
 			this.bits -= flag.value;
-			return this.bits.toString();
+			return this.value;
 		}
 		return new TypeError('The flag must be a string, an array or a number.')
 	}
 }
 
-export { DataBit };
+export { DataBits };

@@ -12,7 +12,7 @@ Q3 : Yes
 UserResponses.add(["q1", "q3"]);
 
 // Retrieve a number with all this data :
-const responcesNumber = UserResponses.dataBit;
+const responcesNumber = UserResponses.value;
 console.log(`The user bits : ` + responcesNumber);
 // Host responcesNumber in database.
 
