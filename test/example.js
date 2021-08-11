@@ -1,6 +1,6 @@
-const { DataBit } = require('../lib/index.js')
+const { DataBits } = require('../lib/index.js')
 const d = ["q1", "q2", "q3"];
-const UserResponses = new DataBit(d);
+const UserResponses = new DataBits(d);
 
 // User answers questions
 /*
