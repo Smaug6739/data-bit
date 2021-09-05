@@ -217,3 +217,4 @@ console.log(DataManager.remove("FLAG_1"));
 ## Example
 
 See the [example file](./EXAMPLE.md)
+
